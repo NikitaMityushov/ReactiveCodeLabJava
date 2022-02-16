@@ -14,8 +14,8 @@ public class Main {
 //        subscribeWithHotObservable();
 //        createIntervalObservable();
 //        createDeferObservable();
-        var operators = new SuppressingOperators();
-        operators.elementAt();
+        var operators = new TransformingOperators();
+        operators.scan();
     }
 
     public static void subscribeColdObservable() {

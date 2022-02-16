@@ -90,8 +90,8 @@ public class SuppressingOperators {
      * After the item is found and emitted, onComplete() is called ad the subscription is disposed of.
      * Returns Maybe<T> because it yields ane emission, but if there are fewer emissions than the index sought, it will be empty.
      * Other flours: elementAtOrError() returns a Single and emits an error if an element at thar index is not found.
-     *               singleElement() turns an Observable into a Maybe, but produces an error if there is more than oe element.
-     *               firstElement() and lastElement() emit the first and the last items, respectively.
+     * singleElement() turns an Observable into a Maybe, but produces an error if there is more than oe element.
+     * firstElement() and lastElement() emit the first and the last items, respectively.
      */
     public void elementAt() {
 //        1)
