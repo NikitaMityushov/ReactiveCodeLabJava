@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @param <T>
  */
-public class CreatingObservablesFactoryMethods<T> {
+public class FactoryMethods<T> {
     /**
      * Observable.create()
      *

@@ -14,13 +14,13 @@ public class Main {
 //        subscribeWithHotObservable();
 //        createIntervalObservable();
 //        createDeferObservable();
-        var operators = new TransformingOperators();
-        operators.scan();
+        var operators = new CollectionOperators();
+        operators.collect();
     }
 
     public static void subscribeColdObservable() {
         System.out.println("1) Start subscribeColdObservable() method");
-        CreatingObservablesFactoryMethods<String> observables = new CreatingObservablesFactoryMethods<>();
+        FactoryMethods<String> observables = new FactoryMethods<>();
 
 //        1) without custom observer
         var observable = observables.create("1", "2", "3", "5");
@@ -72,7 +72,7 @@ public class Main {
      */
     public static void subscribeWithHotObservable() {
         System.out.println("\n2) Start subscribeWithHotObservable() method");
-        CreatingObservablesFactoryMethods<String> observables = new CreatingObservablesFactoryMethods<>();
+        FactoryMethods<String> observables = new FactoryMethods<>();
         var observable = observables.create("Alpha", "Beta", "Gamma", "Trulala").publish(); // creates ConnectableObservable to make flow hot
 
         observable.subscribe(
@@ -102,7 +102,7 @@ public class Main {
 
     public static void createIntervalObservable() {
         System.out.println("\n3) Start createIntervalObserver() method");
-        var observable = new CreatingObservablesFactoryMethods<Long>();
+        var observable = new FactoryMethods<Long>();
         observable.interval(1, TimeUnit.SECONDS)
                 .subscribe((item) -> System.out.println("Interval item is " + item));
         sleep(4000);
@@ -111,7 +111,7 @@ public class Main {
     public static void createDeferObservable() {
         var start = 3;
         var count = 3;
-        var observable = new CreatingObservablesFactoryMethods<Integer>();
+        var observable = new FactoryMethods<Integer>();
         var source = observable.defer(() -> Observable.range(3, 3));
         source.subscribe((item) -> System.out.println("Defer observer1 item " + item));
         start = 10; // change the start value, Observer2 must see it.
