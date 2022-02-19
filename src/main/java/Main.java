@@ -14,8 +14,8 @@ public class Main {
 //        subscribeWithHotObservable();
 //        createIntervalObservable();
 //        createDeferObservable();
-        var operators = new CollectionOperators();
-        operators.collect();
+        var operators = new ErrorRecoveryOperators();
+        operators.retry();
     }
 
     public static void subscribeColdObservable() {
