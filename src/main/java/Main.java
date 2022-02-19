@@ -1,3 +1,6 @@
+import basicOperators.ActionOperators;
+import basicOperators.ErrorRecoveryOperators;
+import basicOperators.FactoryMethods;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -9,13 +12,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-//        Observable.just("Hello world!").subscribe(System.out::println);
-//        subscribeColdObservable();
-//        subscribeWithHotObservable();
-//        createIntervalObservable();
-//        createDeferObservable();
-        var operators = new ErrorRecoveryOperators();
-        operators.retry();
+/*
+        Observable.just("Hello world!").subscribe(System.out::println);
+        subscribeColdObservable();
+        subscribeWithHotObservable();
+        createIntervalObservable();
+        createDeferObservable();
+*/
+        var operators = new ActionOperators();
+        operators.doFinally();
     }
 
     public static void subscribeColdObservable() {

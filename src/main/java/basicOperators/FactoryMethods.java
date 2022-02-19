@@ -1,3 +1,5 @@
+package basicOperators;
+
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableSource;
 import io.reactivex.rxjava3.functions.Supplier;
