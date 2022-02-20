@@ -1,8 +1,10 @@
 import basicOperators.ActionOperators;
 import basicOperators.ErrorRecoveryOperators;
 import basicOperators.FactoryMethods;
+import combiningOperators.AmbiguousOperators;
 import combiningOperators.ConcatenatingFactoriesAndOperators;
 import combiningOperators.MergingFactoriesAndOperators;
+import combiningOperators.ZippingOperators;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -21,9 +23,9 @@ public class Main {
         createIntervalObservable();
         createDeferObservable();
 */
-        var operators = new ConcatenatingFactoriesAndOperators();
-        operators.concatMap();
-        sleep(1000);
+        var operators = new ZippingOperators();
+        operators.zip();
+        sleep(1500);
     }
 
     public static void subscribeColdObservable() {
@@ -128,6 +130,7 @@ public class Main {
 
     /**
      * Creates Observer<T>
+     *
      * @param <T>
      * @return Observer<T>
      */
