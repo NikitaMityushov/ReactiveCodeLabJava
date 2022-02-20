@@ -1,6 +1,7 @@
 import basicOperators.ActionOperators;
 import basicOperators.ErrorRecoveryOperators;
 import basicOperators.FactoryMethods;
+import combiningOperators.MergingFactoriesAndOperators;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -19,8 +20,9 @@ public class Main {
         createIntervalObservable();
         createDeferObservable();
 */
-        var operators = new ActionOperators();
-        operators.doFinally();
+        var operators = new MergingFactoriesAndOperators();
+        operators.flatMap();
+        sleep(1000);
     }
 
     public static void subscribeColdObservable() {
