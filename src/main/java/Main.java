@@ -2,10 +2,7 @@ import basicOperators.ActionOperators;
 import basicOperators.ErrorRecoveryOperators;
 import basicOperators.FactoryMethods;
 import basicOperators.UtilityOperators;
-import combiningOperators.AmbiguousOperators;
-import combiningOperators.ConcatenatingFactoriesAndOperators;
-import combiningOperators.MergingFactoriesAndOperators;
-import combiningOperators.ZippingOperators;
+import combiningOperators.*;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -25,9 +22,9 @@ public class Main {
         createIntervalObservable();
         createDeferObservable();
 */
-        var operators = new UtilityOperators();
-        operators.timeInterval();
-//        sleep(1500);
+        var operators = new GroupingOperators();
+        operators.groupBy();
+        sleep(5000);
     }
 
     public static void subscribeColdObservable() {
