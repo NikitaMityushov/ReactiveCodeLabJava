@@ -1,6 +1,7 @@
 import basicOperators.ActionOperators;
 import basicOperators.ErrorRecoveryOperators;
 import basicOperators.FactoryMethods;
+import basicOperators.UtilityOperators;
 import combiningOperators.AmbiguousOperators;
 import combiningOperators.ConcatenatingFactoriesAndOperators;
 import combiningOperators.MergingFactoriesAndOperators;
@@ -11,6 +12,7 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
+import multicasting.Multicasting;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,9 +25,9 @@ public class Main {
         createIntervalObservable();
         createDeferObservable();
 */
-        var operators = new ZippingOperators();
-        operators.zip();
-        sleep(1500);
+        var operators = new UtilityOperators();
+        operators.timeInterval();
+//        sleep(1500);
     }
 
     public static void subscribeColdObservable() {
