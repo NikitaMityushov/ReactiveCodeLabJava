@@ -3,6 +3,7 @@ import basicOperators.ErrorRecoveryOperators;
 import basicOperators.FactoryMethods;
 import basicOperators.UtilityOperators;
 import combiningOperators.*;
+import concurrency.ConcurrencyOperators;
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.Observer;
@@ -10,20 +11,15 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 import multicasting.Multicasting;
+import switchingThrottlingWindowingBuffering.Buffering;
 
 import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) {
-/*
-        Observable.just("Hello world!").subscribe(System.out::println);
-        subscribeColdObservable();
-        subscribeWithHotObservable();
-        createIntervalObservable();
-        createDeferObservable();
-*/
-        var operators = new GroupingOperators();
-        operators.groupBy();
+
+        var operators = new Buffering();
+        operators.bufferWithBoundary();
         sleep(5000);
     }
 
