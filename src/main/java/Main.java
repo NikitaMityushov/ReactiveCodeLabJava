@@ -12,6 +12,7 @@ import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 import multicasting.Multicasting;
 import switchingThrottlingWindowingBuffering.Buffering;
+import switchingThrottlingWindowingBuffering.Throttling;
 import switchingThrottlingWindowingBuffering.Windowing;
 
 import java.util.concurrent.TimeUnit;
@@ -19,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) {
 
-        var operators = new Windowing();
-        operators.windowWithBoundary();
+        var operators = new Throttling();
+        operators.throttleFirst(1, TimeUnit.SECONDS);
         sleep(5000);
     }
 
