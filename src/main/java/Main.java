@@ -11,6 +11,7 @@ import io.reactivex.rxjava3.disposables.Disposable;
 import io.reactivex.rxjava3.functions.Action;
 import io.reactivex.rxjava3.functions.Consumer;
 import multicasting.Multicasting;
+import multicasting.Subjects;
 import switchingThrottlingWindowingBuffering.Buffering;
 import switchingThrottlingWindowingBuffering.Switching;
 import switchingThrottlingWindowingBuffering.Throttling;
@@ -21,9 +22,9 @@ import java.util.concurrent.TimeUnit;
 public class Main {
     public static void main(String[] args) {
 
-        var operators = new Switching();
-        operators.switchMap();
-        sleep(20000);
+        var operators = new Subjects();
+        operators.unicastSubject();
+//        sleep(5000);
     }
 
     public static void subscribeColdObservable() {
